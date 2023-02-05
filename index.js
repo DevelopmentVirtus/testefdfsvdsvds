@@ -42,7 +42,8 @@ app.post('/petshop', (req, res) => {
             host: MYSQL_HOST,
             user: MYSQL_USER,
             password: MYSQL_PASS,
-            database: MYSQL_DB
+            database: MYSQL_DB,
+            port: port
         })
         conn.connect();
         conn.query(sql_query, (err, results, fields) => {
@@ -55,5 +56,5 @@ app.post('/petshop', (req, res) => {
 
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+//   console.log(`Example app listening on port ${port}`)
 })
