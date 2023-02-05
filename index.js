@@ -32,13 +32,13 @@ app.get('/anao', function(req, res) {
 
 app.post('/petshop', (req, res) => {
     let intentName = req.body.queryResult.intent.displayName;
-    console.log(intentName)
-
+    localStorage.setItem('intent', intentName)
     if (intentName === "agendamento - yes"){
         let nome = req.body.queryResult.outputContexts.parameters['nome-cliente'];
         let fone = req.body.queryResult.outputContexts.parameters['fone-cliente'];
 
-        console.log(intentName)
+        localStorage.setItem('nome', nome)
+        localStorage.setItem('fone', fone)
 
         let sql_query = "INSERT INTO clientes (nome, fone) VALUES ('" + nome + "', " + fone + ")"
         let conn = mysql.createConnection({
