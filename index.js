@@ -27,7 +27,7 @@ app.get('/', (req, res) => {
 
 
 app.get('/anao', function(req, res) {
-    res.json({"texto": "Ta funcionando!"})
+    res.json({"texto": "Ta funcionando!", "porta": process.env.MYSQLPORT})
 })
 
 
