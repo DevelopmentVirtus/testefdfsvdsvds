@@ -36,7 +36,7 @@ app.post('/petshop', (req, res) => {
         let nome = req.body.queryResult.outputContexts.parameters['nome-cliente'];
         let fone = req.body.queryResult.outputContexts.parameters['fone-cliente'];
 
-        let sql_query = "INSERT INTO clientes (nome, fone) VALUES ('" + nome + "', '" + fone + "')"
+        let sql_query = "INSERT INTO clientes (nome, fone) VALUES ('" + nome + "', " + fone + ")"
         let conn = mysql.createConnection({
             host: MYSQL_HOST,
             user: MYSQL_USER,
