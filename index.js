@@ -50,7 +50,7 @@ app.post('/petshop', (req, res) => {
         conn.query(sql_query, (err, results, fields) => {
             if (err) throw err;
             conn.end();
-            res.json({"fulfillmentText": "Seus dados foram salvos com sucesso, quer agendar agora, seu tanso?"})
+            res.json({"fulfillmentText": "Seus dados foram salvos com sucesso, quer agendar agora, seu tanso?", "porta": process.env.MYSQLPORT})
         })
     }
 })
@@ -58,5 +58,4 @@ app.post('/petshop', (req, res) => {
 
 app.listen(process.env.PORT || 3000, () => {
 //   console.log(`Example app listening on port ${port}`)
-console.log(process.env.MYSQLPORT)
 })
