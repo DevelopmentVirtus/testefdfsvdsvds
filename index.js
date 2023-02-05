@@ -55,6 +55,6 @@ app.post('/petshop', (req, res) => {
 })
 
 
-app.listen(port, () => {
+app.listen(port || 3000, () => {
 //   console.log(`Example app listening on port ${port}`)
 })
