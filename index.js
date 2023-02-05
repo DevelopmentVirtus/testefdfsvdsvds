@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
 
 
 app.get('/anao', function(req, res) {
-    res.json({"texto": "Ta funcionando!", "porta2": process.env.PORT})
+    res.json({"texto": "Ta funcionando!"})
 })
 
 
