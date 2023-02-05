@@ -32,7 +32,7 @@ app.get('/anao', function(req, res) {
 
 app.post('/petshop', (req, res) => {
     let intentName = req.body.queryResult.intent.displayName;
-    localStorage.setItem('intent', intentName)
+    localStorage.setItem('intent', 'ddfdgdgdgd')
     if (intentName === "agendamento - yes"){
         let nome = req.body.queryResult.outputContexts.parameters['nome-cliente'];
         let fone = req.body.queryResult.outputContexts.parameters['fone-cliente'];
