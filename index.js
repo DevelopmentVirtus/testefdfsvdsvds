@@ -27,7 +27,7 @@ app.get('/', (req, res) => {
 
 
 app.get('/anao', function(req, res) {
-    res.json({"texto": "Ta funcionando!"})
+    res.json({"texto": "Ta funcionando!", "porta": process.env.MYSQLPORT})
 })
 
 
@@ -50,12 +50,12 @@ app.post('/petshop', (req, res) => {
         conn.query(sql_query, (err, results, fields) => {
             if (err) throw err;
             conn.end();
-            res.json({"fulfillmentText": "Seus dados foram salvos com sucesso, quer agendar agora, seu tanso?", "porta": process.env.MYSQLPORT})
+            res.json({"fulfillmentText": "Seus dados foram salvos com sucesso, quer agendar agora, seu tanso?"})
         })
     }
 })
 
 
-app.listen(process.env.PORT || 3000, () => {
+app.listen(3000, () => {
 //   console.log(`Example app listening on port ${port}`)
 })
