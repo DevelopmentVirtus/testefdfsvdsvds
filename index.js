@@ -31,11 +31,11 @@ app.get('/anao', function(req, res) {
 
 
 app.post('/petshop', (req, res) => {
-    let intentName = request.body.queryResult.intent.displayName;
+    let intentName = req.body.queryResult.intent.displayName;
 
     if (intentName === "agendamento"){
-        let nome = request.body.queryResult.parameters['nome-cliente'];
-        let fone = request.body.queryResult.parameters['fone-cliente'];
+        let nome = req.body.queryResult.parameters['nome-cliente'];
+        let fone = req.body.queryResult.parameters['fone-cliente'];
 
         let sql_query = "INSERT INTO clientes (nome, fone) VALUES ('" + nome + "', '" + fone + "')"
         let conn = mysql.createConnection({
