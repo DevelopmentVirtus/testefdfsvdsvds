@@ -17,8 +17,8 @@ const MYSQL_HOST = process.env.MYSQLHOST;
 const MYSQL_USER = process.env.MYSQLUSER;
 const MYSQL_PASS = process.env.MYSQLPASSWORD;
 const MYSQL_DB = process.env.MYSQLDATABASE;
-const port = process.env.MYSQLPORT;
-// const port = 7619;
+// const port = process.env.MYSQLPORT;
+const port = 7619;
 
 
 app.get('/', (req, res) => {
