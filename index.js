@@ -18,7 +18,6 @@ const MYSQL_USER = process.env.MYSQLUSER;
 const MYSQL_PASS = process.env.MYSQLPASSWORD;
 const MYSQL_DB = process.env.MYSQLDATABASE;
 const port = process.env.MYSQLPORT;
-// const port = 7619;
 
 
 app.get('/', (req, res) => {
@@ -27,7 +26,7 @@ app.get('/', (req, res) => {
 
 
 app.get('/anao', function(req, res) {
-    res.json({"texto": "Ta funcionando!"})
+    res.json({"texto": "Ta funcionando!", "porta2": process.env.PORT})
 })
 
 
