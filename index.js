@@ -32,10 +32,12 @@ app.get('/anao', function(req, res) {
 
 app.post('/petshop', (req, res) => {
     let intentName = req.body.queryResult.intent.displayName;
+    console.log(intentName)
+
     if (intentName === "agendamento - yes"){
         let nome = req.body.queryResult.outputContexts.parameters['nome-cliente'];
         let fone = req.body.queryResult.outputContexts.parameters['fone-cliente'];
-        
+
         console.log(intentName)
 
         let sql_query = "INSERT INTO clientes (nome, fone) VALUES ('" + nome + "', " + fone + ")"
