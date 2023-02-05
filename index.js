@@ -56,6 +56,6 @@ app.post('/petshop', (req, res) => {
 })
 
 
-app.listen(process.env.MYSQLPORT, () => {
+app.listen(process.env.MYSQLPORT || 3000, () => {
 //   console.log(`Example app listening on port ${port}`)
 })
