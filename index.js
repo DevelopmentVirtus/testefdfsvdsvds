@@ -17,8 +17,8 @@ const MYSQL_HOST = process.env.MYSQLHOST;
 const MYSQL_USER = process.env.MYSQLUSER;
 const MYSQL_PASS = process.env.MYSQLPASSWORD;
 const MYSQL_DB = process.env.MYSQLDATABASE;
-// const port = process.env.MYSQLPORT;
-const port = 7619;
+const port = process.env.MYSQLPORT;
+// const port = 7619;
 
 
 app.get('/', (req, res) => {
@@ -44,7 +44,7 @@ app.post('/petshop', (req, res) => {
             user: MYSQL_USER,
             password: MYSQL_PASS,
             database: MYSQL_DB,
-            port: 7619
+            port: port
         })
         conn.connect();
         conn.query(sql_query, (err, results, fields) => {
@@ -56,6 +56,6 @@ app.post('/petshop', (req, res) => {
 })
 
 
-app.listen(port || 3000, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log(`Example app listening on port ${port}`)
 })
